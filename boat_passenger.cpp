@@ -24,10 +24,7 @@ public:
         th=new thread(&passenger::get_boat, this);
     }
 
-    const bool operator < (const passenger& other) const{
-        return (this->id<other.id);
-    }
-
+   
     void get_boat(){
         sem_boat.acquire();
         mtx1.lock();
